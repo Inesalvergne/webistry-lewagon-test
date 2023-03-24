@@ -8,8 +8,18 @@ welcomeForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const inputEmail = document.querySelector("#inputEmail");
   const emailValidation = document.querySelector("#emailValidation");
-  if (valid(inputEmail.value) === false) {
+  const inputName = document.querySelector("#inputName");
+  const nameValidation = document.querySelector("#nameValidation");
+  if (inputName.value === "" && valid(inputEmail.value) === false) {
     emailValidation.classList.remove("d-none");
     inputEmail.classList.add("not-valid");
+    nameValidation.classList.remove("d-none");
+    inputName.classList.add("not-valid");
+  } else if (valid(inputEmail.value) === false) {
+    emailValidation.classList.remove("d-none");
+    inputEmail.classList.add("not-valid");
+  } else if (inputName.value === "") {
+    nameValidation.classList.remove("d-none");
+    inputName.classList.add("not-valid");
   }
 });
