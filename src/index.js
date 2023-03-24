@@ -25,21 +25,40 @@ const validation = () => {
     inputName.classList.add("not-valid");
   } else if (checkAccuracy.checked === false) {
     checkboxValidation.classList.remove("d-none");
+  } else {
+    return true;
   }
-  return true;
 };
 
-const welcomeForm = document.querySelector("#welcome-form");
+const sendMessage = (message) => {
+  fetch("https://portal.webistry.com/lewagon-challenge", {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ full_name: message.name, coding_language: "Ruby" })
+  })
+    .then(response => response.json())
+    .then((data) => {
+      console.log(data);
+    });
+};
+
+// const welcomeForm = document.querySelector("#welcome-form");
+const welcomeForm = document.getElementById("welcome-form");
+const submitBtn = document.querySelector(".btn");
 const formTitle = document.querySelector("#form-title");
-const successTag = `<p> <span> Success!</span> You're all set. </p>`;
 const container = document.querySelector(".container");
 welcomeForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  console.log(checkAccuracy.checked);
-  // validation();
   if (validation()) {
     welcomeForm.remove();
     formTitle.remove();
+    const formData = new FormData(welcomeForm);
+    const message = Object.fromEntries(formData);
+    const dropdown = document.getElementById("programmingLanguage");
+    console.log(dropdown);
+    console.log(message);
+    // sendMessage(message);
+    const successTag = `<p id="success-message"><span class="green-text">Success, ${message.name}!</span> You're all set.</p>`;
     container.insertAdjacentHTML("afterbegin", successTag);
   }
 });

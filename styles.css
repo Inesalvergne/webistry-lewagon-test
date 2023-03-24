@@ -46,3 +46,13 @@ body {
 .not-valid{
   border: 2px solid #F05F5D;
 }
+
+#success-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.green-text{
+  color: #1C9D75;
+}
