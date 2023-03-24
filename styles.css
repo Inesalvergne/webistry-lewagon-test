@@ -1,0 +1,44 @@
+
+body {
+  font-family: "Work Sans";
+  color: #1E1F22;
+  background: #F0F1F4 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.container {
+  width: 451px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border-radius: 24px;
+  padding: 20px;
+  padding: 40px;
+}
+
+#title-levelup {
+  text-align: center;
+  font-weight: bold;
+  font-size: 56px;
+  letter-spacing: -0.67px;
+}
+
+.red-text {
+  color: #F05F5D;
+}
+
+#form-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+.form-control {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border-radius: 12px;
+  border: 2px solid #ECEDF2;
+}
+
+.btn-primary {
+  width: 100%;
+  background: #F05F5D;
+  border-radius: 12px;
+  border: none;
+  padding: 12px;
+}
