@@ -50,7 +50,6 @@ body {
 #success-message {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .green-text{

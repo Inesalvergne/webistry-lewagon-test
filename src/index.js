@@ -3,6 +3,9 @@ const valid = (email) => {
   return regex.test(email);
 };
 
+const dropdown = document.getElementById("programmingLanguage");
+// console.log(dropdown.value);
+
 const inputEmail = document.querySelector("#inputEmail");
 const emailValidation = document.querySelector("#emailValidation");
 const inputName = document.querySelector("#inputName");
@@ -34,7 +37,7 @@ const sendMessage = (message) => {
   fetch("https://portal.webistry.com/lewagon-challenge", {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ full_name: message.name, coding_language: "Ruby" })
+    body: JSON.stringify({ full_name: message.name, coding_language: message.programming })
   })
     .then(response => response.json())
     .then((data) => {
@@ -53,12 +56,13 @@ welcomeForm.addEventListener("submit", (event) => {
     welcomeForm.remove();
     formTitle.remove();
     const formData = new FormData(welcomeForm);
+    formData.append('programming', dropdown.value);
     const message = Object.fromEntries(formData);
-    const dropdown = document.getElementById("programmingLanguage");
-    console.log(dropdown);
-    console.log(message);
+    console.log(message.programming);
     // sendMessage(message);
-    const successTag = `<p id="success-message"><span class="green-text">Success, ${message.name}!</span> You're all set.</p>`;
+    const successTag = `<div id="success-message">
+                          <p> <span class="green-text">Success, ${message.name}!</span> You're all set. </p>
+                        </div>`
     container.insertAdjacentHTML("afterbegin", successTag);
   }
 });
