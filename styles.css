@@ -30,7 +30,7 @@ body {
   font-weight: 600;
 }
 .form-control {
-  background: #FFFFFF 0% 0% no-repeat padding-box;
+  background: #FFFFFF;
   border-radius: 12px;
   border: 2px solid #ECEDF2;
 }
@@ -41,4 +41,8 @@ body {
   border-radius: 12px;
   border: none;
   padding: 12px;
+}
+
+.not-valid{
+  border: 2px solid #F05F5D;
 }

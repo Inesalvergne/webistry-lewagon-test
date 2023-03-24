@@ -21,7 +21,7 @@
 
     <div class="container">
       <h2 id="form-title">Let's get started by knowing more about you.</h2>
-      <form>
+      <form id="welcome-form">
         <div class="form-group mb-4">
           <label for="inputName">Name</label>
           <input type="name" class="form-control" id="inputName" aria-describedby="emailHelp" placeholder="Enter your name">
@@ -29,6 +29,7 @@
         <div class="form-group mb-4">
           <label for="inputEmail">Email</label>
           <input type="email" class="form-control" id="inputEmail" placeholder="Ener your email">
+          <small id="emailValidation" class="form-text text-muted d-none"> This email is not valid. </small>
         </div>
         <div class="form-group mb-4">
           <label for="exampleFormControlSelect1">What's your favorite coding language?</label>
